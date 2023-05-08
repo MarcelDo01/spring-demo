@@ -4,6 +4,11 @@
 # Log file
 *.log
 
+### H2 DB ###
+*.mv.db
+*.trace.db
+
+
 # BlueJ files
 *.ctxt
 
