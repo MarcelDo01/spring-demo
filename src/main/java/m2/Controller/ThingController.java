@@ -1,5 +1,7 @@
-package Objects;
+package m2.Controller;
 
+import m2.Service.ThingService;
+import m2.Thing;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
