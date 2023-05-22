@@ -1,6 +1,6 @@
-package Objects;
+package m2.Repository;
 
-import Objects.Thing;
+import m2.Thing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

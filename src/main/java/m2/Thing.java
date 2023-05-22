@@ -1,4 +1,4 @@
-package Objects;
+package m2;
 
 import jakarta.persistence.*;
 

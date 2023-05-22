@@ -1,7 +1,7 @@
-package Objects;
+package m2.Service;
 
-import Objects.Thing;
-import Objects.ThingRepository;
+import m2.Thing;
+import m2.Repository.ThingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
