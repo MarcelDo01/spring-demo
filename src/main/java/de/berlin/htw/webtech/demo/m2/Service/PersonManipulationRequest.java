@@ -1,13 +1,13 @@
 package m2.Service;
 
-public class PersonManipulateRequest {
+public class PersonManipulationRequest {
 
 
     private String firstName;
     private String lastName;
     private boolean vaccinated;
 
-    public PersonManipulateRequest(String firstName, String lastName, boolean vaccinated) {
+    public PersonManipulationRequest(String firstName, String lastName, boolean vaccinated) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.vaccinated = vaccinated;
