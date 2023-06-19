@@ -1,40 +1,44 @@
-package m2.Service;
+package de.berlin.htw.webtech.demo.m2.Service;
 
-import m2.Repository.PersonRepository;
+
+import de.berlin.htw.webtech.demo.m2.Controller.api.Person;
+import de.berlin.htw.webtech.demo.m2.persistence.Gender;
+import de.berlin.htw.webtech.demo.m2.persistence.PersonEntity;
+import de.berlin.htw.webtech.demo.m2.persistence.PersonRepository;
 import org.springframework.stereotype.Service;
-import m2.Service.PersonEntity;
-import m2.Service.PersonManipulationRequest;
+import de.berlin.htw.webtech.demo.m2.Controller.api.PersonManipulationRequest;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
-
 
 @Service
 public class PersonService {
 
     private final PersonRepository personRepository;
+    private final PersonTransformer personTransformer;
 
-    public PersonService(PersonRepository personRepository) {
+    public PersonService(PersonRepository personRepository, PersonTransformer personTransformer) {
         this.personRepository = personRepository;
+        this.personTransformer = personTransformer;
     }
 
     public List<Person> findAll() {
         List<PersonEntity> persons = personRepository.findAll();
         return persons.stream()
-                .map(this::transformEntity)
+                .map(personTransformer::transformEntity)
                 .collect(Collectors.toList());
     }
 
     public Person findById(Long id) {
         var personEntity = personRepository.findById(id);
-        return personEntity.map(this::transformEntity).orElse(null);
+        return personEntity.map(personTransformer::transformEntity).orElse(null);
     }
 
     public Person create(PersonManipulationRequest request) {
-        var personEntity = new PersonEntity(request.getFirstName(), request.getLastName(), request.isVaccinated());
+        var gender = Gender.valueOf(request.getGender());
+        var personEntity = new PersonEntity(request.getFirstName(), request.getLastName(), request.isVaccinated(), gender);
         personEntity = personRepository.save(personEntity);
-        return transformEntity(personEntity);
+        return personTransformer.transformEntity(personEntity);
     }
 
     public Person update(Long id, PersonManipulationRequest request) {
@@ -47,9 +51,10 @@ public class PersonService {
         personEntity.setFirstName(request.getFirstName());
         personEntity.setLastName(request.getLastName());
         personEntity.setVaccinated(request.isVaccinated());
+        personEntity.setGender(Gender.valueOf(request.getGender()));
         personEntity = personRepository.save(personEntity);
 
-        return transformEntity(personEntity);
+        return personTransformer.transformEntity(personEntity);
     }
 
     public boolean deleteById(Long id) {
@@ -59,14 +64,5 @@ public class PersonService {
 
         personRepository.deleteById(id);
         return true;
-    }
-
-    private Person transformEntity(PersonEntity personEntity) {
-        return new Person(
-                personEntity.getId(),
-                personEntity.getFirstName(),
-                personEntity.getLastName(),
-                personEntity.getVaccinated()
-        );
     }
 }

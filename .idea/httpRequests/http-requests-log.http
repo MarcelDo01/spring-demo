@@ -1,0 +1,155 @@
+GET http://localhost:8080/api/v1/persons
+
+<> 2023-05-27T184421.404.json
+
+###
+
+POST http://localhost:8080/thing
+Content-Type: application/json
+
+{
+  "id": 2
+  "name": "Flasche",
+  "price": 50
+}
+
+<> 2023-05-14T203702.404.json
+
+###
+
+POST http://localhost:8080/thing
+Content-Type: application/json
+
+{
+  "id": 2
+  "name": "Flasche",
+  "price": 50
+}
+
+<> 2023-05-14T194805.404.json
+
+###
+
+POST http://localhost:8080/thing
+Content-Type: application/json
+
+{
+  "id": 2
+  "name": "Flasche",
+  "price": 50
+}
+
+<> 2023-05-14T191054.404.json
+
+###
+
+POST http://localhost:8080/things
+Content-Type: application/json
+
+{
+  "id": 2
+  "name": "Flasche",
+  "price": 50
+}
+
+<> 2023-05-14T191038.404.json
+
+###
+
+POST http://localhost:8080/things
+Content-Type: application/json
+
+{
+  "id": 2
+  "name": "Flasche",
+  "price": 50
+}
+
+<> 2023-05-14T191025.404.json
+
+###
+
+POST http://localhost:8080/things
+
+<> 2023-05-14T191020.404.json
+
+###
+
+POST http://localhost:8080/things
+Content-Type: application/json
+
+{
+  "name": "Flasche",
+  "price": "50"
+}
+
+<> 2023-05-14T184739.404.json
+
+###
+
+POST http://localhost:8080/things
+Content-Type: application/json
+
+{
+  "name": "Flasche",
+  "price": "50"
+}
+
+<> 2023-05-14T184557.404.json
+
+###
+
+GET http://localhost:8080/hello
+
+<> 2023-05-14T184517.404.json
+
+###
+
+POST http://localhost:8080/things
+Content-Type: application/json
+
+{
+  "name": "Flasche",
+  "price": "50"
+}
+
+<> 2023-05-14T182912.404.json
+
+###
+
+POST http://localhost:8080/things
+Content-Type: application/json
+
+{
+  "name": "Flasche",
+  "price": "50"
+}
+
+<> 2023-05-14T182904.404.json
+
+###
+
+POST http://localhost:8080/db-console
+Content-Type: application/json
+
+{
+  "name": "Flasche",
+  "price": "50"
+}
+
+<> 2023-05-14T182606.200.html
+
+###
+
+POST http://localhost:8080/things
+Content-Type: application/json
+
+{
+  "name": "Flasche",
+  "price": "50"
+}
+
+<> 2023-05-14T182415.404.json
+
+###
+

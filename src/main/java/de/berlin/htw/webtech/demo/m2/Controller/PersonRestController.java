@@ -1,8 +1,8 @@
-package m2.Controller;
+package de.berlin.htw.webtech.demo.m2.Controller;
 
-import m2.Service.Person;
-import m2.Service.PersonManipulationRequest;
-import m2.Service.PersonService;
+import de.berlin.htw.webtech.demo.m2.Service.PersonService;
+import de.berlin.htw.webtech.demo.m2.Controller.api.Person;
+import de.berlin.htw.webtech.demo.m2.Controller.api.PersonManipulationRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
